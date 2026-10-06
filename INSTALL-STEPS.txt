@@ -1,0 +1,37 @@
+PROPTRACK - INSTALL ON IPHONE (FREE, NO MAC)
+
+A) PUT THE FILES IN YOUR REPO (kponsakthivel/Property-Tracker)
+   1. Unzip this package on your computer.
+   2. On GitHub open the repo -> Add file -> Upload files.
+   3. Drag in everything from the unzipped folder:
+        .github   (folder)      www   (folder)
+        capacitor.config.json   package.json
+      (If GitHub will not take the hidden ".github" folder, see "Plan B" below.)
+   4. Click "Commit changes".  Existing files in www/ stay; only same-name files are replaced.
+
+B) TURN ON HOSTING
+   1. Repo -> Settings -> Pages -> Source: choose "GitHub Actions".
+   2. Repo -> Actions tab -> wait for "Deploy PropTrack (iPhone web app)" to get a green tick.
+      (If it did not start: open it -> Run workflow.)
+
+C) INSTALL ON IPHONE
+   1. Open this link in SAFARI:
+        https://kponsakthivel.github.io/Property-Tracker/
+   2. Tap Share -> Add to Home Screen -> Add.
+   3. PropTrack now opens full screen like an app.
+
+UPDATES LATER
+   Change your files and commit to main. The site redeploys by itself and the app
+   picks up the new version the next time it is opened with internet
+   (close it fully and reopen once or twice if the old one still shows).
+
+PLAN B (if .github folder will not upload)
+   Repo -> Add file -> Create new file. Type  .github/workflows/pages.yml  as the name,
+   paste the contents of that file. Repeat for  .github/scripts/inject_pwa.py
+
+OPTIONAL: .ipa FILE
+   Actions -> "Build unsigned iOS IPA (optional)" -> Run workflow -> download PropTrack-ipa.
+   Install with AltStore or Sideloadly (free Apple ID apps expire after 7 days).
+
+NOTE: The Android app id stays com.sitetracker.app so your current Android app keeps updating normally.
+      Only the displayed app name changed to PropTrack.
